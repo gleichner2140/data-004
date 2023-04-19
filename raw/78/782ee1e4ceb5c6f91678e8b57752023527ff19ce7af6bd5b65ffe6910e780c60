@@ -1,0 +1,489 @@
+body{
+    font-family:Georgia;
+    font-size:0.9em;
+    margin: 0em 0.3em;
+    color:black;
+}
+.mst {
+    font-size: 100%;
+    line-height: 120%;
+    clear: both;
+}
+
+.mst i,
+.mst em {
+    font-weight:bold;
+    font-style: italic;
+}
+
+.mst h1,
+.mst h2,
+.mst ol,
+.mst ul,
+.mst p,
+.mst cite {
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 0.1em;
+    padding: 0;
+    font-size: 100%;
+}
+
+.mst a {
+    font-family:goergia;
+    font-weight:bold;
+    margin-left:0.3em;
+    text-decoration: none;
+    color: #00695C
+}
+
+.mst a:hover {
+    text-decoration: underline
+}
+
+.mst li {
+    margin-top: 0.2em;
+    /* background-color: rgba(204, 204, 204, 0.28); */
+    border-radius:0.2em;
+    list-style: none;
+}
+
+.kzo {
+    float: right;
+    height: 15px;
+    z-index: 999;
+    position: relative;
+    margin-right:2em;
+    padding-right: 2px;
+    clear: right
+}
+
+.mst h1 sup {
+    position: relative;
+    left: -4px
+}
+
+h1 .uig sup {
+    left: 0
+}
+
+.mst h1,
+.q5y,
+.ptm {
+    margin-bottom: .6em
+}
+
+.noj {
+    color: #1c4b8b;
+    font-weight: bold;
+    font-size: 120%
+}
+
+.noj em:before {
+    font-style: normal;
+    content: "\0B7"
+}
+
+em.ozr,
+.ub9 em {
+    color: sienna;
+    font-style: normal;
+    font-size: 95%
+}
+
+em.ozr {
+    font-weight: bold
+}
+
+.nsv {
+    height: 15px;
+    cursor: pointer
+}
+
+.uig .nsv {
+    height: 13px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px
+}
+
+.uig {
+    color: dimgray;
+    font-size: 85%;
+    white-space: nowrap
+}
+
+.uig em {
+    color: #B8860B;
+    font-size: 90%;
+    white-space: normal
+}
+
+em.wqx {
+    font-size: 90%
+}
+
+em.wqx,
+.yvp {
+    color: teal
+}
+
+.mst q {
+    font-family:arial;
+    quotes: none;
+    color: #369
+}
+
+.mst cite,
+.blt,
+.uig em.j8z,
+.idu {
+    color: dimgray;
+    font-size: 90%
+}
+
+.jyi {
+    font-size: 95%;
+    display: block;
+    margin-left: 1em;
+    position: relative
+}
+
+.jyi q:before {
+    content: "\021D2\020";
+    color: #FF7E1E;
+    position: absolute;
+    left: -1.1em;
+    font-size: 90%
+}
+
+.d9d .jyi,
+.anp .jyi {
+    margin-left: 2em
+}
+
+.mst h2 {
+    margin: .5em 0 .4em;
+    border-bottom: 1px solid #CCC;
+    color: #DA3433;
+    clear: both;
+}
+
+.nri,
+.hjn {
+    float: right;
+    width: 13px;
+    height: 6px;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    padding: .3em .1em .3em .3em
+}
+
+.hjn {
+    transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    filter: FlipV
+}
+
+.tih {
+    line-height:130%;
+    border-radius:0.2em;
+    background-color:#f0f0f0;
+    font-family:arial;
+    padding: .2em 0.6em;
+    font-weight: bold;
+    display: inline-block;
+    font-variant: normal;
+}
+
+li+.pdg,
+.ub9,
+.dvm,
+.leo,
+.kwj,
+.ugp,
+.dss,
+p.vwo,
+.dro,
+.viz p {
+    margin-top: .3em;
+}
+
+.pdg em {
+    display:inline-block;
+    margin: 0em 0.1em;
+    background-color: #e27403;
+    color: white;
+    border-radius:0.2em;
+    padding: 0em 0.3em 0em 0.3em;
+    font-size:0.8em;
+    line-height: 140%;
+}
+
+.ub9+.ub9,
+.nih li+li,
+.lvc li+li,
+.jza li+li,
+.viz p+p {
+    margin-top: 0.2em;
+}
+
+.ub9 {
+    margin-left: .8em;
+    position: relative
+}
+
+.ub9:before {
+    content: "-";
+    left: -.7em;
+    position: absolute
+}
+
+.bnu,
+.auc b,
+.idb b,
+.eqc {
+    font-weight: bold;
+    color: #1c4b8b;
+    font-size: 105%
+}
+
+p.idb {
+    margin-left: 1.3em;
+    position: relative
+}
+
+.auc span[class],
+.idb span[class] {
+    display: inline
+}
+
+.auc span,
+.idb span,
+.auc span.jyi,
+.idb span.jyi {
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+em.lfu,
+em.pys,
+em.nqw {
+    font-style: normal;
+    font-weight: bold
+}
+
+em.lfu {
+    position: absolute;
+    left: -1.2em
+}
+
+em.pys {
+    color: #CA0403
+}
+
+em.lfu,
+em.nqw {
+    color: #1C4B8B;
+    letter-spacing: -1px
+}
+
+.dvm b,
+.gmw b {
+    color: maroon
+}
+
+.oi3,
+.hca,
+.srx {
+    margin-top: 1em
+}
+
+.q5y {
+    background-color: #E0F2F1;
+    border-radius:.5em;
+    padding:0.1em 0.3em;
+}
+
+.q5y p,
+.jza p {
+    margin-left: .6em;
+    position: relative
+}
+
+.q5y .gmb {
+    position: absolute;
+    left: -.6em;
+    font-weight:bold;
+}
+
+.q5y p.gdl {
+    text-indent: -.6em
+}
+
+.dvm img {
+    float: left;
+    max-width: 300px;
+    border: 1px solid #CCC;
+    margin: 0 1ex 1ex 2px
+}
+
+.dvm div {
+    padding-top: 5%
+}
+
+.dvm div,
+.gmw div {
+    color: #666;
+    font-size: 85%
+}
+
+.gmw img {
+    max-width: 280px
+}
+
+.gmw {
+    float: right;
+    max-width: 290px;
+    border: 1px solid #CCC;
+    padding: 2px;
+    margin: 0 2px 1ex 1ex;
+    position: relative;
+    z-index: 999
+}
+
+.ptm p,
+.viz p {
+    line-height: 1.5em;
+    text-align:justify;
+    text-indent: 1.4em;
+    margin:0em 0.2em;
+}
+
+.ptm em,
+.eqc {
+    font-weight:bold;
+    color: #283593;
+}
+
+.idu em {
+    color: dimgray
+}
+
+.das {
+    display:block;
+    background-color:rgba(158, 158, 158, 0.16);
+    border-radius:0.2em;
+    padding: 0.4em 0.3em 0.2em 0.3em;
+    margin:0.5em 0em;
+    font-family:arial;
+    font-weight:bold;
+    color: #314e5f;
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+.das:before {
+    content: "\025BA";
+    font-size: 85%
+}
+
+.dia:before {
+    content: "\025CA\020"
+}
+
+.leo ol:before {
+    content: "\021E8\020"
+}
+
+.kwj li {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    margin-left: .6em
+}
+
+.kwj li p:before {
+    content: counter(n, disc);
+    font-size: 80%;
+    color: #1c4b8b;
+    position: absolute;
+    left: -.6em
+}
+
+.jza q:before {
+    content: counter(n, disc);
+    font-size: 90%;
+    color: #CA0403;
+    position: absolute;
+    left: -.6em
+}
+
+.oaf,
+.ugp {
+    margin-top: .8em;
+    margin-bottom: .4em;
+    margin-left:0.5em;
+    color: #000;
+    font-size: 80%;
+    text-transform: uppercase;
+    padding-left: 3px;
+    line-height: 100%;
+}
+
+.oaf {
+    border-left: 3px solid darkorange;
+}
+
+.ugp {
+    border-left: 3px solid #9400D3
+}
+
+.m1g {
+    display: inline;
+    vertical-align: text-bottom;
+    max-height: 1.5em
+}
+.rhj p{
+    line-height: 1.3em;
+    text-indent:1.2em;
+    padding-bottom:.1em;
+    margin:0.2em;
+}
+.j8z,
+.x7u {
+    font-variant: small-caps;
+    font-weight: bold
+}
+.xol {
+    margin-left:.5em;
+}
+
+.viz {
+    border: 1px dashed gray;
+    margin: .5em 1ex;
+    padding: .5em
+}
+.bnu {
+    margin-left:0.5em !important;
+}
+
+.idu {
+    margin: .3em auto;
+    width: 90%
+}
+.q5y p{
+    font-family:sans-serif;
+    line-height:1.4em;
+}
+.jza p{
+    margin:0.3em 1em;
+    font-family:sans-serif;
+}
+.d9d{
+    margin-left:1em;
+}
+.ohk {
+    margin:.5em 0em;
+}
