@@ -1,0 +1,215 @@
+.boxed{
+width:1000px;
+padding:20px;
+background-color:#fff;
+margin:0 auto;
+overflow:hidden;
+}
+.fluid{
+width:100%;
+}
+
+
+
+#container_wrapper{
+margin:0 auto;
+width:100%;
+min-height:500px;
+overflow:hidden;
+}
+#container_wrapper_potrait{
+margin:0 auto;
+width:960px;
+min-height:500px;
+overflow:hidden;
+}
+
+#container{
+margin:0 auto;
+width:960px;
+min-height:500px;
+overflow:hidden;
+}
+
+.pad{
+
+}
+
+#mid-column-wrapper{
+	width:100%;
+	float:left;
+	background-color:#ededed;
+	background-image: url(../images/gradient-bg.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+
+}
+
+#mid-column-home{
+	width:960px;
+	margin-top:50px!important;
+	overflow:hidden;
+	margin: 0 auto;
+
+}
+
+#mid-column{
+	width:960px;
+	margin-bottom:50px!important;
+	margin-top:50px!important;
+	overflow:hidden;
+	margin: 0 auto;
+}	
+
+.entry-content{
+	overflow:hidden;
+}
+
+/* Columns shortcode
+----------------------------------------------------------------------------------------------------*/
+#mid-column-wrapper .fullwidth,
+#mid-column-wrapper .one_half, #mid-column-wrapper .one_half_last,
+#mid-column-wrapper .one_third, #mid-column-wrapper .one_third_last,
+#mid-column-wrapper .two_third, #mid-column-wrapper .two_third_last,
+#mid-column-wrapper .one_fourth, #mid-column-wrapper .one_fourth_last,
+#mid-column-wrapper .three_fourth, #mid-column-wrapper .three_fourth_last,
+#mid-column-wrapper .one_fifth, #mid-column-wrapper .one_fifth_last,
+#mid-column-wrapper .four_fifth, #mid-column-wrapper .four_fifth_last
+{
+	margin-bottom:0px!important;
+}
+
+
+.fullwidth{
+	width:100%;
+	float:left;
+
+}
+
+.one_half{
+	width:48.10%;
+	float:left;
+	margin-right:3.80%;
+
+
+}
+
+.one_half_last{
+	width:48.10%;
+	float:right;
+	
+}
+
+.one_third{
+	width:30.80%;
+	float:left;
+	margin-right:3.80%;
+
+
+
+	
+}
+.one_third_last{
+	width:30.80%;
+	float:right;
+	
+}
+
+
+.two_third{
+	width:65.40%;
+	float:left;
+	margin-right:3.80%;
+
+	
+	
+}
+.two_third_last{
+	width:65.40%;
+	float:right;
+	display:table;
+
+}
+
+.one_fourth{
+	width:22.15%;
+	float:left;
+	margin-right:3.80%;
+	
+}
+
+.one_fourth_last{
+	width:22.15%;
+	float:right;
+	
+}
+
+.three_fourth{
+	width:74.05%;
+	float:left;
+	margin-right:3.80%;
+	
+}
+
+.three_fourth_last{
+	width:74.05%;
+	float:right;
+
+}
+
+
+.one_fifth{
+	width:16.96%;
+	float:left;
+	margin-right:3.80%;
+
+}
+.one_fifth_last{
+	width:16.96%;
+	float:right;
+
+}
+	
+.four_fifth{
+	width:79.240%;
+	float:left;
+	margin-right:3.80%;
+}
+
+.four_fifth_last{
+	width:79.240%;
+	float:right;
+}
+
+
+	
+
+* html .clearfix {
+
+} /* IE6 */
+
+
+
+*:first-child+html .clearfix {
+
+} /* IE7 */
+
+
+/* clearfix */
+
+.clear{
+	clear:both;
+	display:block;
+	height:0px;
+	width:100%;
+	visibility:hidden;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
