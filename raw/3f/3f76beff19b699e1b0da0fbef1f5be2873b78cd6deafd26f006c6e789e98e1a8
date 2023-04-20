@@ -1,0 +1,49 @@
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sudoSlider.js"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function(){   
+		var auto = true;
+		var autostopped = false;
+		var sudoSlider = jQuery("#sudo_slider").sudoSlider({
+		numeric:true,
+		prevNext:false,
+		auto: true, 
+		pause:6000, 
+		hoverPause: true
+		
+	   })
+	   
+		.mouseenter(function() {
+		auto = sudoSlider.getValue('autoAnimation');
+		if (auto)
+			{
+			sudoSlider.stopAuto();
+			}
+		else
+		{
+		autostopped = true;
+		}
+		
+		}).mouseleave(function() {
+     
+	  if (!autostopped)
+		{
+		sudoSlider.startAuto();
+      }
+   });
+});
+
+
+</script>
+	      <div id="sudo_slider_wrapper">
+            <div id="sudo_slider">
+			<ul>	
+
+             <li> 
+                <img src="<?php echo get_template_directory_uri();?>/images/slider-img-1.png" alt="" title="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque id feugiat mi."  width="960" height="400"/></li>
+                <li><img src="<?php echo get_template_directory_uri();?>/images/slider-img-2.png" alt="" title="This is a sample Caption Praesent imperdiet faucibus tristique. " width="960" height="400" /></li>
+                <li><img src="<?php echo get_template_directory_uri();?>/images/slider-img-3.png" alt="" title="This is a sample luctus et ultrices posuere cubilia Curae" width="960" height="400" /></li>
+                <li><img src="<?php echo get_template_directory_uri();?>/images/slider-img-4.png" alt="" title="This is an example of a caption Quisque id feugiat mi."  width="960" height="400" /></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mid-column">
