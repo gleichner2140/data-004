@@ -1,0 +1,28 @@
+/* Hyper links
+------------------------------------------------------*/
+#mid-column-wrapper a:link, #mid-column-wrapper a:visited{
+color:#fc6700;
+text-decoration:none;
+}
+#mid-column-wrapper a:hover{
+color:#666;
+}
+
+/* read more
+----------------------------------------------------------------------------------------------------*/
+
+.readmore{
+	background-position: right -72px;
+}
+ 
+.readmore:hover { 
+	background-position: right -108px;
+
+ }
+
+.readmore span { 
+	background-position: left -72px;
+ }
+.readmore:hover span {
+	background-position: left -108px;
+}
