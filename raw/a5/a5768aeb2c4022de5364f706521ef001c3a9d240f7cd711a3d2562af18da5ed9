@@ -1,0 +1,30 @@
+<div <?php global $leftsidebarclass; echo $leftsidebarclass; ?>>
+    <?php
+		//wp_reset_query();
+		global $page_widget;
+		
+	if($page_widget!="select"){ 
+	if ( !dynamic_sidebar($page_widget) ) : 
+		?>
+    <div class="widget-container">
+     <div class="sidebar_inner_line">
+        <h3><?php echo $widget_title ?>页面小工具</h3>
+      
+        <p><?php _e( 'This is a sample default widget text, it is disappeared once you add widget content to', 'prominent' ); ?> "<strong><?php echo $widget_title ?> <?php _e( 'Sidebar', 'prominent' ); ?> </strong>"
+		<?php _e( 'from widgets section.', 'prominent' ); ?> </p>
+        </div>
+    </div>
+    <?php
+		endif;
+	}else{if ( ! dynamic_sidebar( 'sidebar_home' ) ) { ?>
+    <div class="widget-container">
+     <div class="sidebar_inner_line">
+        <h3 class="widget-title">
+            <?php _e( 'Widget Title', 'prominent' ); ?>
+        </h3>
+        <p> <?php _e("To edit this sidebar, go to admin backend's <strong><em>Appearance -> Widgets</em></strong> and place widgets into the <strong>Appropriate</strong> Widget Area", 'prominent'); ?></p>
+       
+    </div>
+    </div>
+    <?php } }	?>
+</div>
