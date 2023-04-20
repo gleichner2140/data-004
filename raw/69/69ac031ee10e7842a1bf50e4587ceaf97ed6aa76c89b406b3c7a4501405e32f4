@@ -1,0 +1,314 @@
+<?php
+ $prefix = '';
+$page = array(
+
+	'id' => 'my-meta-box',
+
+	'title' => '页面标题选项',
+
+	'page' => 'page',
+
+	'context' => 'normal',
+
+	'priority' => 'high',
+
+	'fields' => array(
+	
+		array(
+			'name' => '页面标题图标',
+			'desc' => '如果你想要使你的页面个性化十足，在这里选择上传页面标题图标.',
+			'id' => $prefix . 'kaya_page_title_icon',
+			'type' => 'upload',
+			'std' => ''
+		),
+		array(
+			'name' => '选择页面标题风格',
+			'desc' => '选择页面标题',
+			'id' => $prefix . 'subheader_titleoptions',
+			'type' => 'radio',
+			'options' => array("title" => "仅标题", "customtext" => "自定义文本", 'titlecustomtext'=>'标题 &自定义文本','disable'=>'不需要'),
+			'std' => 'title'
+		),
+		array(
+			'name' => '自定义页面描述',
+			'desc' => '输入页面标题描述',
+			'id' => $prefix . 'kaya_pagedesc',
+			'type' => 'textarea',
+			'std' => ''
+		),
+				
+	)
+
+);
+
+
+
+add_action('admin_menu', 'page_add_box');
+
+
+
+// Add meta box
+
+function page_add_box() {
+
+	global $page;
+
+	
+
+	add_meta_box($page['id'], $page['title'], 'page_show_box', $page['page'], $page['context'], $page['priority']);
+
+}
+
+
+
+// Callback function to show fields in meta box
+
+function page_show_box() {
+
+	global $page, $post;
+
+	
+
+	// Use nonce for verification
+
+
+
+	
+
+	echo '<div class="kayaoptions-formtable">';
+	echo '<input type="hidden" name="mytheme_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+
+
+	foreach ($page['fields'] as $field) {
+	
+	
+	
+	
+
+		// get current post meta data
+
+		$meta = get_post_meta($post->ID, $field['id'], true);
+	
+		if($meta=="") $meta=$field['std'];
+
+		echo '<div class="metapanel">',
+
+				'<div class="formfirstcolumn"><label for="', $field['id'], '">', $field['name'], '</label></div>',
+
+				'<div class="fieldsdiv">';
+
+		switch ($field['type']) {
+
+			case 'text':
+
+				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />';
+
+				echo '<span class="desc">', $field['desc'],'</span>';
+
+				break;
+
+			case 'textarea':
+
+				echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="10" rows="3" style="width:500px">', $meta ? $meta : $field['std'], '</textarea>';
+
+				echo '<span class="desc">', $field['desc'],'</span>';
+
+				break;
+
+			case 'select':
+
+				echo '<select name="', $field['id'], '" id="', $field['id'], '">';
+
+				foreach ($field['options'] as $key => $val) {
+
+					echo '<option value="', $val, '" ', $meta == $val ? ' selected="selected"' : '', '>', $val, '</option>';
+
+				}
+
+				echo '</select>';
+					echo '<span class="desc">', $field['desc'],'</span>';
+				break;
+				case 'select1':
+
+				echo '<select name="', $field['id'], '" id="', $field['id'], '">';
+
+				foreach ($field['options'] as $key => $val) {
+
+					echo '<option value="', $key, '" ', $meta == $key ? ' selected="selected"' : '', '>', $val, '</option>';
+
+				}
+
+				echo '</select>';
+					echo '<span class="desc">', $field['desc'],'</span>';
+				break;
+
+			case 'radio':
+
+				foreach ($field['options'] as $key => $val) {
+
+					echo '<input  class="radio_button" type="radio" name="', $field['id'], '" value="', $key, '"', $meta == $key ? ' checked="checked"' : '', ' />', $val; 
+
+				}
+
+				break;
+			case 'upload': 
+				echo "<span><label for='upload_image'>";
+				echo'<input value="'.stripslashes(get_post_meta($post->ID, $field['id'], true)).'" type="text" name="'.$field['id'].'"  id="'.$field['id'].'" size="50%" />';
+				echo '<input class="upload_img_button"  id="'.$field['id'].'" type="button" value="上传图像" />';
+				echo '</label></span>';
+				echo '<span class="desc">', $field['desc'],'</span>';
+			
+
+			break;
+			case 'color':
+			?>
+            <script type="text/javascript" language="javascript">
+
+
+
+		jQuery(document).ready(function(){
+
+				 jQuery('#<?php echo $field['id']; ?>_picker').children('div').css('backgroundColor', '<?php echo $meta; ?>');    
+
+				 jQuery('#<?php echo $field['id']; ?>_picker').ColorPicker({
+
+					color: '<?php echo $color; ?>',
+
+					onShow: function (colpkr) {
+
+						jQuery(colpkr).fadeIn(500);
+
+						return false;
+
+					},
+
+					onHide: function (colpkr) {
+
+						jQuery(colpkr).fadeOut(500);
+
+						return false;
+
+					},
+
+					onChange: function (hsb, hex, rgb) {
+
+						//jQuery(this).css('border','1px solid red');
+
+						jQuery('#<?php echo $field['id']; ?>_picker').children('div').css('backgroundColor', '#' + hex);
+
+						jQuery('#<?php echo $field['id']; ?>_picker').next('input').attr('value','#' + hex);
+
+						
+
+					}
+
+				  });
+		});
+
+		
+
+		</script>
+
+            <?php
+			
+			echo '<div id="' , $field['id'] , '_picker" class="colorSelector"><div></div></div>';
+
+			echo  '<input class="kaya-color" name="', $field['id'] ,'" id="',$field['id'] ,'" type="text"  value="', $meta ? $meta : $field['std'],'" />';
+			echo '<span class="desc">', $field['desc'],'</span>';
+			break;
+
+			case 'checkbox':
+				echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />&nbsp;&nbsp;' , $field['desc'];
+
+				break;
+
+		}
+
+		echo 	'</div>';
+		echo    '</div';
+
+	}
+
+	
+
+	echo '</div>';
+
+}
+
+add_action('save_post', 'page_save_data');
+add_action('admin_init','custompagemeta_jsscript');
+
+function custompagemeta_jsscript(){
+wp_enqueue_script('custommeta_script', get_template_directory_uri() .'/lib/admin/js/custommeta_jsscript.js',array('jquery'));
+wp_enqueue_script('color-picker', KAYA_DIRECTORY.'/lib/admin/js/colorpicker.js', array('jquery'));
+}
+
+// Save data from meta box
+
+function page_save_data($post_id) {
+
+	global $page;
+
+	// verify nonce
+
+	if (!wp_verify_nonce(isset($_POST['mytheme_meta_box_nonce']), basename(__FILE__))) {
+
+		return $post_id;
+
+	}
+
+
+
+	// check autosave
+
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+
+		return $post_id;
+
+	}
+
+
+
+	// check permissions
+
+	if ('page' == $_POST['post_type']) {
+
+		if (!current_user_can('edit_page', $post_id)) {
+
+			return $post_id;
+
+		}
+
+	} elseif (!current_user_can('edit_post', $post_id)) {
+
+		return $post_id;
+
+	}
+
+	
+
+	foreach ($page['fields'] as $field) {
+
+		$old = get_post_meta($post_id, $field['id'], true);
+
+		$new = $_POST[$field['id']];
+
+		
+
+		if ($new && $new != $old) {
+
+			update_post_meta($post_id, $field['id'], $new);
+
+		} elseif ('' == $new && $old) {
+
+			delete_post_meta($post_id, $field['id'], $old);
+
+		}
+
+	}
+
+}
+
+
+
+?>
