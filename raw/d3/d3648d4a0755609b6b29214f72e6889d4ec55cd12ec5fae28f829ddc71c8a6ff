@@ -1,0 +1,133 @@
+#frontpage_top_left_section{
+position:relative;
+margin:0px;
+padding:0px;
+}
+
+.frontpage_gallery {
+margin:0px;
+padding:0px;
+list-style:none;
+
+
+
+
+}
+.frontpage_gallery ul li {
+	text-align:center;
+	list-style:none;
+	float:left;
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+}
+#frontpage_middle_bottom .frontpage_gallery ul li a img {
+	float:left;
+	margin-right:5px;
+	margin-bottom:5px;
+}
+
+
+.frontpage_gallery ul li h4 {
+margin-top:10px;
+}
+
+
+.frontpage_gallery ul li a.read-more {
+	margin-left:18%;}
+	
+a.next{
+ position: absolute;
+    top:0px;
+    right: 0px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent url(../images/next-horizontal.png) no-repeat 0 0;
+
+}
+a.next:hover{
+  background-position: left -30px;
+}
+a.prev{
+  position: absolute;
+    top:5px;
+    right:25px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent url(../images/prev-horizontal.png) no-repeat 0 0;
+	
+}
+a.prev:hover{
+  background-position: left -30px;
+  
+}
+/*Testimonial slider */
+.sliderHolder2 ul li{
+margin:0px;
+padding:0px;
+
+}
+.testimonial_holder {
+	position:relative;
+	width:260px;
+	overflow:hidden;
+	padding:0px;
+	min-height:50px;
+	
+}
+.testimonial-list{
+list-style:none;
+border-bottom:none!important;
+}
+#jCarouselLite_nav2{
+position:absolute;
+}
+.testimonial_jcarousel{
+	min-height:50px;
+	margin-bottom:10px;
+	font-style: italic;
+	list-style:none;	
+}
+.testimonial-client-name img{
+	border:1px solid #222;
+	padding:4px;
+	background-color:#111;
+	overflow:hidden;
+	
+}
+
+.testimonial-client-name{
+	font-weight:bold;
+	display:block;
+	overflow:hidden;
+
+
+
+}
+a.next2{
+ position: absolute;
+    top:0px;
+    right: 0px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent url(../images/next-horizontal.png) no-repeat 0 0;
+}
+a.next2:hover{
+  background-position: left -30px;
+}
+a.prev2{
+  position: absolute;
+    top:5px;
+    right:25px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent url(../images/prev-horizontal.png) no-repeat 0 0;
+}
+a.prev2:hover{
+  background-position: left -30px;
+  
+}
