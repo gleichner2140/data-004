@@ -1,0 +1,37 @@
+<?php
+get_header(); ?>
+
+<div class="innerpage_title_wrapper">
+   
+<div class="page-title">
+
+        <h2>
+            <?php _e( ' <h1> Error 404 - Not Found</h1>', 'prominent' ); ?>
+        </h2>
+
+</div>
+	
+</div>
+
+
+
+<div id="mid-column">
+    <div class="entry-content">
+        <div class="column2">
+            <?php _e( ' <h3>Archives by Subject:</h3>', 'prominent' ); ?>
+            <ul class="ul">
+                <?php wp_list_categories('&title_li='); ?>
+            </ul>
+        </div>
+        <div class="column2_last">
+            <?php _e( ' <h3>Archives by Month::</h3>', 'prominent' ); ?>
+            <ol class="ul">
+                <?php wp_get_archives('type=monthly'); 
+				next_posts_link() 
+				?>
+            </ol>
+        </div>
+    </div>
+    <!-- .entry-content -->
+</div>
+<?php get_footer(); ?>
