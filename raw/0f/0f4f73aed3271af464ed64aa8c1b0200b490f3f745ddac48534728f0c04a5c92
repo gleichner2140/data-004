@@ -1,0 +1,508 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.wp-caption-text, .gallery-caption{
+
+}
+
+/* Global Elements
+------------------------------------------------------*/
+body{
+	margin:0px;
+	padding:0px;
+	background-image: url(../images/bg.png);
+	background-repeat: repeat;
+	background-position: left top;
+	background-color:#f8f8f8;
+}
+
+body{
+	margin:0px;
+	margin:0 auto;
+	color:#4a4a4a;
+	line-height:18px;	
+	font-family:Helvetica,Arial,sans-serif;
+    font-size: 12px;
+	font-family: "Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+   
+}
+/* Hyper links
+------------------------------------------------------*/
+a:link, a:visited{
+color:#01203d;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration: inherit;
+color:#666;
+}
+
+a{
+	outline:none;
+}
+blockquote {
+  font-weight: bold;
+  padding: 0 100px;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+cite {
+  text-align: right;
+  display: block;
+}
+.v-space{
+display:block;
+height:60px;
+}
+/* headings
+------------------------------------------------------*/
+
+/* heading */
+h1, h2, h3, h4, h5, h6{ font-weight:normal; }
+h1, h2, h3{margin-bottom:15px;}
+h4, h5, h6{margin-bottom:10px;}
+h1 {font-size:24px; line-height:26px;}
+h2 {font-size:22px; line-height:24px;}
+h3 {font-size:20px; line-height:22px;}
+h4 {font-size:18px; line-height:20px;}
+h5 {font-size:16px; line-height:18px;}
+h6 { font-size:14px; line-height:16px;}
+p {
+	margin-bottom:15px;
+}
+body p:last-child{margin-bottom:0;}
+
+
+/*  Text elements
+----------------------------------------------------------------------------------------------------*/
+ul {
+	list-style: square;
+	margin: 0 0 18px 18px;
+	clear:both;
+}
+ol {
+	list-style: decimal;
+	margin: 0 0 18px 18px;
+	clear:both;
+}
+ol ol {
+	list-style: upper-alpha;
+	
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+list-style: upper-alpha;
+	margin-bottom: 0;
+
+}
+
+
+.line{
+border-bottom:1px solid #ccc;
+padding-bottom:10px;
+margin-bottom:20px;
+}
+
+hr{
+border: 
+1px solid #ccc;  
+width: 100%;
+color: #ccc;
+height: 1px;
+clear:both;
+display:block;
+
+}
+.hr-black{
+	width: 100%;	
+	height: 1px;
+	overflow:hidden;
+	background-image: url(../images/opacity-30.png);
+	background-repeat: repeat;
+	border:none;
+}
+/* styled lists Styles/ fancy list style
+------------------------------------------------------*/
+
+dl {
+	margin: 0 0 24px 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 18px;
+}
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	font-style: italic;
+}
+big {
+	font-size: 131.25%;
+}
+ins {
+	background: #ffc;
+	text-decoration: none;
+}
+blockquote{
+	font-style: italic;
+	font-size:18px;
+	line-height:25px;
+	padding:0px 20px 20px 50px;
+	color:#777;
+	margin-bottom:10px;
+	font-weight:normal;
+	background-image: url(../images/blockquote.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+blockquote.alignleft{
+	float:left;
+	width:250px;
+}
+blockquote.alignright{
+
+	float:right;
+	width:250px;
+}
+pre {
+	background: #f7f7f7;
+	color: #222;
+	line-height: 18px;
+	margin-bottom: 18px;
+	margin-top:10px;
+	padding: 1.5em;
+}
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+input[type="text"],
+textarea,
+input
+ {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	
+}
+input[type="text"]:hover,
+textarea:hover,
+input:hover {
+
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input:focus{
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+	outline: none;
+	
+}
+
+/* imgage alignment
+----------------------------------------------------------------------------------------------------*/
+.alignright {
+  float: right; 
+  margin: 0 0 30px 20px;
+  width:auto;
+}
+.alignleft {
+  float: left; 
+  margin:3px  20px 20px 0;
+  width:auto;
+}
+
+.aligncenter{
+margin: 0 10px 0px 0;
+width:auto;
+}
+
+.alignleft_slider{
+  float: left; 
+  margin:0px 1px 0px 0;
+  width:auto;
+
+}
+
+/* custom alignment
+----------------------------------------------------------------------------------------------------*/
+.alignleft2 {
+  float: left; 
+  margin:3px  20px 10px 0;
+  width:auto;
+}
+a img {
+border: 0;
+border-width: 0px;
+
+}
+
+.img-border {
+	border:1px solid #cfcfcf;
+	background-color:#eaeaea;
+	padding:9px;
+
+}	
+.img-padding {
+	padding:13px;
+	float:left;
+
+}	
+
+
+
+.img-border1 {
+	border:1px solid #dadada;
+	background-color:#eee;
+	padding:4px;	
+}	
+
+
+
+
+.box{
+	margin-bottom:30px;
+	clear:both;
+	display:block;
+	overflow:hidden;
+	}
+
+/* Gallery Page 
+----------------------------------------------------------------------------------------------------*/
+ul.kaya_gallery {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+
+
+
+}
+ul.kaya_gallery li {
+	display: inline-block;
+	margin-bottom:30px;
+	float:left;
+	margin:10px;
+}
+ul.kaya_gallery li p {
+	text-align:center;
+	margin-top:0px;
+}
+ul.kaya_gallery li a  {
+
+	
+	
+}
+
+
+
+
+/* box styles
+------------------------------- */
+.kbox{
+	padding:20px;
+	overflow:hidden;
+	display:block;
+	margin-bottom:30px;
+}
+
+.kround_box{
+	padding:40px;
+	-webkit-border-radius: 280px;
+    -moz-border-radius: 280px;
+    border-radius: 280px;
+	overflow:hidden;
+	margin-bottom:30px;
+	width:200px;
+	text-align:center;
+	float:left;
+	margin-right:20px;
+	min-height:200px;
+		
+
+}
+.kbox h2, .kbox h3, .kbox h4, .kbox h5, .kbox h6{
+margin-bottom:5px;
+
+}
+
+
+
+.kbox h4, .kround_box h4{
+color:#fff;
+border:none!important;
+
+}
+
+.kbox a:visited, .kbox a:link,
+.kround_box a:visited, .kround_box a:link
+{
+color:#333;
+background-color:#fff;
+padding:5px 10px;
+
+}
+.kbox a:hover, .kround_box a:hover{background-color:#1d1d1d;}
+
+.textwidget .kbox{
+margin-bottom:20px;
+}
+
+.textwidget .kbox:last-child{
+margin-bottom:0px;
+}
+
+
+/* colors
+------------------------------- */
+.color1{
+	background-color:#000;
+	color:#fff;
+}
+.color2{
+	background-color:#343434;
+	color:#fff;
+}
+.color3{
+	background-color:#dbdbdb;
+	color:#323232;
+}
+
+.color4{
+	background-color:#555555;
+	color:#eee;
+}
+.color5{
+	background-color:#1d95bd;
+	color:#fff;
+}
+.color6{
+	background-color:#949494;
+	color:#333;
+}
+.color7{
+	background-color:#f01200;
+	color:#fff;
+}
+
+.color8{
+	background-color:#dedede;
+	color:#111;
+}
+.color9{
+	background-color:#82a53c;
+	color:#fff;
+}
+.color10{
+	background-color:#ef9304;
+	color:#333;
+}
+
+.color11{
+	background-color:#cb670f;
+	color:#1d1d1d;
+}
+.color12{
+	background-color:#1a8da0;
+	color:#1d1d1d;
+}
+
+
+/* Thumbnial hover Icon
+----------------------------------------------------------------------------------------------------*/
+.hover_video {
+	position: absolute;
+	background:transparent url(../images/video.png) no-repeat 55% 55%;}
+.hover_image {
+	position: absolute;
+	background:transparent url(../images/image.png) no-repeat 55% 55%;}
+.gallery a img, .kaya_gallery a img {
+    position: relative;
+    z-index: 2;}
+
