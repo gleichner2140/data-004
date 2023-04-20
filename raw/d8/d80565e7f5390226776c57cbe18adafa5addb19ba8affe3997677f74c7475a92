@@ -1,0 +1,205 @@
+<?php require_once( '../../../../wp-load.php' );
+
+
+Header("Content-type: text/css");
+
+$google_h1font_size=get_option('google_h1font_size') ?  get_option('google_h1font_size') : '24';
+$google_h2font_size=get_option('google_h2font_size') ? get_option('google_h2font_size') :'20';
+$google_h3font_size=get_option('google_h3font_size') ? get_option('google_h3font_size') :'18';
+$google_h4font_size=get_option('google_h4font_size') ? get_option('google_h4font_size') :'16';
+$google_h5font_size=get_option('google_h5font_size') ? get_option('google_h5font_size') :'12';
+$google_h6font_size=get_option('google_h6font_size') ? get_option('google_h6font_size') :'10';
+
+$google_menufont_size=get_option('google_menufont_size') ? get_option('google_menufont_size') : '12';
+
+$google_bodyfont=get_option('google_bodyfont') ? get_option('google_bodyfont') :'';
+$google_bodyfont_size=get_option('google_bodyfont_size') ? get_option('google_bodyfont_size') :'12';
+$google_line_height=get_option('google_line_height') ? get_option('google_line_height') :'18';
+$google_generaltitlefont=get_option('google_generaltitlefont')? get_option('google_generaltitlefont') :'Open Sans';
+$google_menufont=get_option('google_menufont')? get_option('google_menufont') :'';
+
+$google_slidertitlefont=get_option('google_slidertitlefont') ? get_option('google_slidertitlefont') :'Oswald';
+
+
+$logo_margin_top=get_option('logo_margin_top');
+
+$slider_bg_image=get_option('slider_background'); 
+?>
+
+#logo{
+<?php echo 'padding-top:'?><?php echo get_option('logo_margin_top'); ?>px!important;
+
+}
+
+#sudo_slider_wrapper, .innerpage_title_wrapper {
+
+<?php
+
+
+echo 'background:'?> <?php echo $slider_bg_image['color']; ?> url(<?php echo $slider_bg_image['image']; ?>) <?php echo $slider_bg_image['repeat']; ?> <?php echo $slider_bg_image['position']; ?> !important;
+
+}
+
+body{
+<?php echo 'font-family:'?><?php echo $google_bodyfont; ?>!important; 
+<?php echo 'font-size:'?><?php echo $google_bodyfont_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_bodyfont_size+4; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_line_height; ?>px!important; 
+}
+
+
+h1, h2, h3, h4, h5, h6
+{<?php echo 'font-family:'?><?php echo $google_generaltitlefont; ?>!important; 
+}
+
+#mid-column h1{
+<?php echo 'font-size:'?><?php echo $google_h1font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h1font_size+6; ?>px!important; 
+}
+
+#mid-column h2{
+<?php echo 'font-size:'?><?php echo $google_h2font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h2font_size+6; ?>px!important; }
+
+#mid-column h3{
+<?php echo 'font-size:'?><?php echo $google_h3font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h3font_size+6; ?>px!important; }
+
+#mid-column h4{
+<?php echo 'font-size:'?><?php echo $google_h4font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h4font_size+6; ?>px!important; }
+
+#mid-column h5{
+<?php echo 'font-size:'?><?php echo $google_h5font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h5font_size+6; ?>px!important; 
+}
+
+#mid-column h6{
+<?php echo 'font-size:'?><?php echo $google_h6font_size; ?>px!important;
+<?php echo 'line-height:'?><?php echo $google_h6font_size+6; ?>px!important; 
+}
+
+
+#sudo_slider_wrapper h1, 
+#sudo_slider_wrapper h2, 
+#sudo_slider_wrapper h3,
+#sudo_slider_wrapper h4,
+#sudo_slider_wrapper h5
+{
+<?php echo 'font-family:'?><?php echo $google_slidertitlefont; ?>!important;
+}
+
+.jqueryslidemenu a
+{<?php
+
+ echo 'font-family:'?><?php echo $google_menufont; ?>!important;
+<?php echo 'font-size:'?><?php echo $google_menufont_size; ?>px!important;
+ 
+}
+
+
+#header-wrapper{
+<?php
+$TopHeaderBG=get_option('TopHeaderBG');
+ echo 'background-color:'?><?php echo $TopHeaderBG;
+?>!important;
+}
+
+#header-wrapper{
+<?php
+$TopHeaderFontColor=get_option('TopHeaderFontColor');
+echo 'color:'?><?php echo $TopHeaderFontColor;
+?>!important;
+}
+
+#sudo_slider_wrapper, .innerpage_title_wrapper{
+<?php
+$HomeSliderBG=get_option('HomeSliderBG');
+echo 'background-color:'?><?php echo $HomeSliderBG;
+?>!important;
+}
+
+#sudo_slider_wrapper, .innerpage_title_wrapper{
+<?php
+$HomeSliderFontColor=get_option('HomeSliderFontColor');
+echo 'color:'?><?php echo $HomeSliderFontColor;
+?>!important;
+}
+
+#sudo_slider_wrapper h1,
+#sudo_slider_wrapper h2,
+#sudo_slider_wrapper h3,
+#sudo_slider_wrapper h4,
+#sudo_slider_wrapper h5,
+.innerpage_title_wrapper h2,
+.page-description
+{
+<?php
+$HomeSliderTitleColor=get_option('HomeSliderTitleColor');
+echo 'color:'?><?php echo $HomeSliderTitleColor;
+?>!important;
+}
+
+
+#sudo_slider a:link, .innerpage_title_wrapper a:link,
+#sudo_slider a:visited, .innerpage_title_wrapper a:visited
+{
+<?php
+$HomeSliderLinkColor=get_option('HomeSliderLinkColor');
+echo 'color:'?><?php echo $HomeSliderLinkColor;?>;
+}
+
+
+.entry-content a:link, .entry-content a:visited{
+<?php
+$PageLinkColor=get_option('PageLinkColor');
+$PageLinkColor= $PageLinkColor ? $PageLinkColor:'';
+ echo 'color:'?><?php echo $PageLinkColor;
+?>!important;
+}
+.entry-content a:hover{
+<?php
+$PageLinkMouseOverColor=get_option('PageLinkMouseOverColor');
+$PageLinkMouseOverColor= $PageLinkMouseOverColor ? $PageLinkMouseOverColor:'';
+ echo 'color:'?><?php echo $PageLinkMouseOverColor;
+?>!important;
+}
+
+
+#bottom_section_wrapper 
+{<?php
+$BottomSectionBGColor=get_option('BottomSectionBGColor');
+$BottomSectionBGColor= $BottomSectionBGColor ? $BottomSectionBGColor:'';
+ echo 'background-color:'?><?php echo $BottomSectionBGColor;
+?>!important;
+}
+#bottom_section h3
+{<?php
+$BottomSectionTitleColor=get_option('BottomSectionTitleColor');
+$BottomSectionTitleColor= $BottomSectionTitleColor ? $BottomSectionTitleColor:'';
+ echo 'color:'?><?php echo $BottomSectionTitleColor;
+?>!important;
+}
+
+#bottom_section, #footer
+{<?php
+$BottomSectionFontColor=get_option('BottomSectionFontColor');
+$BottomSectionFontColor= $BottomSectionFontColor ? $BottomSectionFontColor:'';
+ echo 'color:'?><?php echo $BottomSectionFontColor;
+?>!important;
+}
+
+#bottom_section a:link, #bottom_section a:visited
+{<?php
+$BottomSectionLinkColor=get_option('BottomSectionLinkColor');
+$BottomSectionLinkColor= $BottomSectionLinkColor ? $BottomSectionLinkColor:'';
+ echo 'color:'?><?php echo $BottomSectionLinkColor;
+?>!important;
+}
+#bottom_section a:hover
+{<?php
+$BottomSectionLinkMouseOverColor=get_option('BottomSectionLinkMouseOverColor');
+$BottomSectionLinkMouseOverColor= $BottomSectionLinkMouseOverColor ? $BottomSectionLinkMouseOverColor:'';
+ echo 'color:'?><?php echo $BottomSectionLinkMouseOverColor;
+?>!important;
+}
