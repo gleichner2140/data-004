@@ -1,0 +1,58 @@
+<?php
+get_header(); ?>
+<?php $sidebar_layout=get_post_meta($post->ID,'kaya_pagesidebar',true); 
+$sidebarclass="class='one_third_last'";
+$contentcolumn="class='two_third'";
+$leftsidebarclass="class='sidebar'";
+switch($sidebar_layout)
+{
+case 'leftsidebar':
+$sidebarclass="class='one_third'";
+$contentcolumn="class='two_third_last'";
+$leftsidebarclass="class='page-sidebar-left'";
+break;
+case 'rightsidebar':
+$sidebarclass="class='one_third_last'";
+$contentcolumn="class='two_third'";
+break;
+case 'full':
+$contentcolumn="class='fullwidth'";
+break;
+}
+?>	
+<?php 
+	     $subheader_disable=get_post_meta($post->ID,'subheader_titleoptions',true);
+        $kaya_subheaderbg=get_post_meta($post->ID,'kaya_subheaderbg',true);
+        if($subheader_disable!="disable"){ 
+    ?>
+<div class="innerpage_title_wrapper" <?php if($kaya_subheaderbg) { ?> style="background-color:<?php echo $kaya_subheaderbg; ?>" <?php } ?>>
+    <div class="page-title">
+        <?php custom_pagetitle($post->ID); ?>
+    </div>
+	<?php }else{ echo '<div class="v-space"></div>';} ?>
+</div>
+
+<div id="mid-column">
+<div <?php echo $contentcolumn ?>>
+ 
+        <div class="entry-content">
+           <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <?php the_content(); ?>
+            <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'prominent' ), 'after' => '</div>' ) ); ?>
+            <?php edit_post_link( __( 'Edit', 'prominent' ), '<span class="edit-link">', '</span>' ); ?>
+        </div>
+        <!-- .entry-content -->
+    </div>
+    <!-- #post-## -->
+    <?php endwhile; ?>
+</div>
+<?php if($sidebar_layout !="full") { ?>
+<div <?php echo $sidebarclass;?> >
+    <?php get_sidebar();?>
+</div>
+<div class="clear"></div>
+<?php } ?>
+<div class="clear"></div>
+</div>
+<?php get_footer(); ?>
