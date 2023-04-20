@@ -1,0 +1,224 @@
+function init() {
+	tinyMCEPopup.resizeToInnerSize();
+}
+
+function getCheckedValue(radioObj) {
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+
+function insertshortcodes() {
+	
+	var tagtext;
+	
+	var shortcodes_panel = document.getElementById('shortcodes_panel');
+	
+if (shortcodes_panel.className.indexOf('current') != -1) {
+		var kayashortcode = document.getElementById('kayashortcodetag').value;
+		switch(kayashortcode)
+{
+case 0:
+ 	tinyMCEPopup.close();
+  break;
+  
+ 
+	case 'button_small':
+	tagtext="["+kayashortcode + "  linkurl=\"#\"  color=\"blue\"] Insert Button Text <span> </span> [/" + kayashortcode + "]";
+	break;
+  
+	case 'button_big':
+	tagtext="["+kayashortcode + "  linkurl=\"#\"  color=\"blue\"  desc=\"desc\"] Insert Button Text <span> </span> [/" + kayashortcode + "]";
+	break;  
+  
+	case 'dropcap':
+ 	tagtext="["+kayashortcode + " ] insert text [/" + kayashortcode + "]";
+	break;
+	
+	case "toggle_content":
+		tagtext = "["+ kayashortcode + "  heading=\"Toggle Heading\"]  Add your content here [/" + kayashortcode + "]";
+	break;
+	
+	case "tabs":
+	tagtext="["+ kayashortcode + " tab1=\"Tab 1 Title\" tab2=\"Tab 2 Title\" tab3=\"Tab 3 Title\"]<br /><br />[tab]Insert tab 1 content here[/tab]<br />[tab]Insert tab 2 content here[/tab]<br />[tab]Insert tab 3 content here[/tab]<br /><br />[/" + kayashortcode + "]";
+	break;
+	
+		case "vtabs":
+	tagtext="["+ kayashortcode + " tab1=\"Tab 1 Title\" tab2=\"Tab 2 Title\" tab3=\"Tab 3 Title\"]<br /><br />[vtab]Insert tab 1 content here[/vtab]<br />[vtab]Insert tab 2 content here[/vtab]<br />[vtab]Insert tab 3 content here[/vtab]<br /><br />[/" + kayashortcode + "]";
+	break;
+	
+	case "hvtabs":
+	tagtext="["+ kayashortcode + " tab1=\"Tab 1 Title\" tab2=\"Tab 2 Title\" tab3=\"Tab 3 Title\"]<br /><br />[hvtab]Insert tab 1 content here[/hvtab]<br />[hvtab]Insert tab 2 content here[/hvtab]<br />[hvtab]Insert tab 3 content here[/hvtab]<br /><br />[/" + kayashortcode + "]";
+	break;
+	
+	case 'clear':
+ 	tagtext="["+kayashortcode + " ]";
+	break;
+	
+	case 'divider':
+ 	tagtext="["+kayashortcode + " ]";
+	break;
+	
+	case 'announcement':
+ 	tagtext="["+kayashortcode + " ] Add your content here [/" + kayashortcode + "]";
+	break;
+	case "kaya_table":
+	tagtext = "["+ kayashortcode + "  style= \" red \"]<table width=\"100%\"><br /><tbody><br /><tr><br /><th width=\"30%\">Heading 1</th width=\"30%\"><br /><th width=\"30%\">Heading 2</th width=\"30%\"><br /><th width=\"30%\">Heading 3</th><br /><th>Heading 4</th><br /></tr><br /><tr><br /><td>Division 1</td><br /><td>Division 2</td><br /><td>Division 3</td><br /><td>Division 4</td><br /></tr><br /><tr><br /><td>Division 1</td><br /><td>Division 2</td><br /><td>Division 3</td><br /><td>Division 4</td><br /></tr><br /></tbody><br /></table><br />[/" + kayashortcode + "]";
+break;
+
+// shortcode columns starts ==================================================
+	case "one_fifth":
+	tagtext = "[one_fifth]<br /> Insert your content here <br />[/one_fifth]<br /><br />[one_fifth]<br /> Insert your content here 1<br />[/one_fifth]<br /><br />[one_fifth]<br /> Insert your content here <br />[/one_fifth]<br /><br />[one_fifth]<br /> Insert your content here <br />[/one_fifth]<br /><br />[one_fifth_last]<br /> Insert your content here <br />[/one_fifth_last]<br />";
+	break;
+	
+	case "four_fifth":
+	tagtext = "[four_fifth]<br /> Insert your content here <br />[/four_fifth]<br /><br />[one_fifth_last]<br /> Insert your content here <br />[/one_fifth_last]<br />";
+	break;
+	
+	case "one_fourth":
+	tagtext = "[one_fourth]<br /> Insert your content here <br />[/one_fourth]<br /><br />[one_fourth]<br /> Insert your content here <br />[/one_fourth]<br /><br />[one_fourth]<br /> Insert your content here <br />[/one_fourth]<br /><br />[one_fourth_last]<br /> Insert you content here <br />[/one_fourth_last]<br />";
+	 break;
+	
+	
+	case "one_third":
+	tagtext = "[one_third]<br /> Insert your content here<br />[/one_third]<br /><br />[one_third]<br /> Insert your content here <br />[/one_third]<br /><br />[one_third_last]<br /> Insert your content here <br />[/one_third_last]<br />";
+	break;
+	 
+	case "one_half":
+	tagtext = "[one_half]<br /> Insert your content here <br />[/one_half]<br /><br />[one_half_last]<br /> Insert your content here <br />[/one_half_last]<br />";
+	break;
+ 
+	case "fullwidth":
+	tagtext = "[fullwidth]<br /> Insert your content here <br />[/fullwidth]";
+	break;
+ 
+	case "two_thid":
+	tagtext = "[two_third]<br /> Insert your content here <br />[/two_third]<br /><br />[one_third_last]<br /> Insert your content here <br />[/one_third_last]";
+	break;
+ 
+	case "three_fourth":
+	tagtext = "[three_fourth]<br /> Insert your content here <br />[/three_fourth]<br /><br />[one_fourth_last]<br /> Insert your content here <br />[/one_fourth_last]";
+	break;
+	
+// shortcode columns end ==================================================	
+
+	case 'quotes':
+ 	tagtext="["+kayashortcode + " ] Insert you content here [/" + kayashortcode + "]";
+	break;
+	
+	
+	case "list":
+	
+	tagtext = "[list style=\"circle\"]<ul><li> Insert your content here </li> <li> Insert your content here </li> <li> Insert your content here </li></ul>[/list]";
+	break;
+	
+	case "testimonial":
+		tagtext = "["+ kayashortcode + "  title=\"Testimonial Title\" author_image=\" client image url\" link=\"#\" ]  Add the Testimonial content here [/" + kayashortcode + "]";
+	break;
+	
+	case "teaserbox":
+		tagtext = "["+ kayashortcode + "   icon=\" icon url  \" title= \" Teaser Title \" link=\"#\" ]  Add the Teaserbox content here [/" + kayashortcode + "]";
+	break;
+	
+	
+	case "teaser":
+		tagtext = "["+ kayashortcode + "   buttontext=\" Button Text  \"  link=\"#\" ]  Add your Teaser content here [/" + kayashortcode + "]";
+	break;
+	
+	case "social":
+		tagtext = "["+ kayashortcode + " icon=\" icon url  \" link=\"#\" ]  [/" + kayashortcode + "]";
+	break;
+	case "recentportfolio":
+		tagtext = "["+ kayashortcode + " portfolio=\"\" postlimit=\"4\" width=\"50 \" height=\"50\"  pagination=\"true\" pagination=\"false\" comments=\"false\"]   [/" + kayashortcode + "]";
+	break;
+
+	case "recentpost":
+		tagtext = "["+ kayashortcode + " category=\"\"  postlimit=\"4\" width=\"50 \" height=\"50\"  pagination=\"true\" pagination=\"false\" comments=\"false\"]  [/" + kayashortcode + "]";
+	break;
+	case "galleria":
+	tagtext = "["+ kayashortcode + " width=\" 600  \" height=\"400\"  transition=\"fade\" autoplay=\"3000\"]  [/" + kayashortcode + "]";
+	break;
+		
+	
+  
+  default:
+tagtext="["+kayashortcode + "] Insert your  content here text[/" + kayashortcode + "]";
+}
+}
+// portfolio panel
+var kaya_portfolio = document.getElementById('portfolio_panel');
+
+if (kaya_portfolio.className.indexOf('current') != -1) {
+
+		var portfolio_tag = document.getElementById('portfolio_tag').value;
+
+    	var max_columns = document.getElementById('max_columns').value;
+
+		var images_pages = document.getElementById('images_pages').value;
+		
+
+
+
+var title_show = getCheckedValue(document.getElementsByName('title_show'));
+
+var desc_show = getCheckedValue(document.getElementsByName('desc_show'));
+
+var images_links = getCheckedValue(document.getElementsByName('images_links'));
+var portfolio_sidebar = getCheckedValue(document.getElementsByName('portfolio_sidebar'));
+
+		if (portfolio_tag != 0 )
+
+			tagtext = "[portfolio id=" + portfolio_tag + " images=" + images_pages + " column=" + max_columns + " style=" + images_links + "  title=" + title_show + " desc=" + desc_show + " sidebar=" + portfolio_sidebar + "]";
+
+		else
+
+tagtext = "[portfolio id=\"\" images=" + images_pages + " column=" + max_columns + " style=" + images_links + "  title=" + title_show + " desc=" + desc_show + " sidebar=" + portfolio_sidebar + "]";
+	}
+// blog panel
+// portfolio panel
+var kaya_blog = document.getElementById('blog_panel');
+
+if (kaya_blog.className.indexOf('current') != -1) {
+
+		var blog_tag = document.getElementById('blog_tag').value;
+
+    	var numberof_post = document.getElementById('numberof_post').value;
+		var imagewidth = document.getElementById('imagewidth').value;
+		var imageheight = document.getElementById('imageheight').value;
+
+var metainfo_show = getCheckedValue(document.getElementsByName('metainfo_show'));
+
+var postimg_show = getCheckedValue(document.getElementsByName('postimg_show'));
+var pagination_show = getCheckedValue(document.getElementsByName('pagination_show'));
+
+		if (blog_tag != 0 )
+
+			tagtext = "[blog  id=" + blog_tag + " imagewidth=" + imagewidth+ " imageheight=" + imageheight+ "  postlimit=" + numberof_post + " metainfo=" + metainfo_show + " postimage=" + postimg_show + " pagination=" + pagination_show+ "]";
+
+		else
+
+tagtext = "[blog id=\"\"  imagewidth=" + imagewidth+ " imageheight=" + imageheight+ " postlimit=" + numberof_post + " metainfo=" + metainfo_show + " postimage=" + postimg_show + " pagination=" + pagination_show+ "]";
+	}
+
+if(window.tinyMCE) {
+		//TODO: For QTranslate we should use here 'qtrans_textarea_content' instead 'content'
+		window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tagtext);
+		//Peforms a clean up of the current editor HTML. 
+		//tinyMCEPopup.editor.execCommand('mceCleanup');
+		//Repaints the editor. Sometimes the browser has graphic glitches. 
+		tinyMCEPopup.editor.execCommand('mceRepaint');
+		tinyMCEPopup.close();
+	}
+	return;
+}
